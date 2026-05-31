@@ -1,9 +1,9 @@
-version: '3'
-
 services:
   signal-watcher:
     build: .
     container_name: signal-watcher
-    restart: always
+    restart: unless-stopped
     env_file:
       - .env
+    volumes:
+      - ./.state:/app/.state

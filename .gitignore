@@ -149,6 +149,8 @@ activemq-data/
 
 # Environments
 .env
+.env.*
+!.env.example
 .envrc
 .venv
 env/
@@ -216,3 +218,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Signal Watcher local runtime files
+.state/
+*.log
+*.tar.gz
+damai_detail*.json
+damai_item.js
+dmit-cookies.json
+*-cookies.json

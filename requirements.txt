@@ -1,3 +1,1 @@
-requests
-python-dotenv
-schedule
+# This project currently uses only the Python standard library.

@@ -1,0 +1,9 @@
+.env
+.state/
+*.log
+__pycache__/
+*.pyc
+.git/
+*.tar.gz
+damai_detail*.json
+damai_item.js
