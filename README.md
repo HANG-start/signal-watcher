@@ -1,5 +1,8 @@
 # Signal Watcher
 
+[![CI](https://github.com/HANG939/signal-watcher/actions/workflows/ci.yml/badge.svg)](https://github.com/HANG939/signal-watcher/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 Signal Watcher is a lightweight monitoring toolkit for VPS deployments.
 
 It currently includes:
@@ -10,6 +13,13 @@ It currently includes:
 - Cron and Docker deployment examples
 
 The project is designed for personal reminders. It does not include credential scraping, captcha bypassing, or automatic paid order submission.
+
+## Use Cases
+
+- Follow public posts from a Twitter/X account and receive near-real-time notifications.
+- Watch a Damai project page for public status changes and ticket availability signals.
+- Run low-cost monitors on a VPS with cron, Docker, or a process supervisor.
+- Build custom signal monitors using the existing notification and state-file patterns.
 
 ## How It Works
 
@@ -39,11 +49,11 @@ Edit `.env`:
 
 ```bash
 SOURCE_MODE=rss
-X_USERNAME=Alpha_Cat
+X_USERNAME=example_user
 SERVERCHAN_SENDKEY=your_serverchan_sendkey
-DAMAI_ITEM_ID=1036125619131
-DAMAI_TARGET_TEXT=任意日期，看台 580 元
-DAMAI_TARGET_DATES=2026-07-24/25/26
+DAMAI_ITEM_ID=replace_with_damai_item_id
+DAMAI_TARGET_TEXT=replace_with_target_ticket_tier
+DAMAI_TARGET_DATES=replace_with_target_dates
 ```
 
 Run a single check:
@@ -116,6 +126,20 @@ Important files:
 - `scripts/install_x_cron.sh`: cron installer for Twitter/X
 - `scripts/install_damai_cron.sh`: cron installer for Damai
 - `.state/`: local state, ignored by git
+
+## Development
+
+Run the same basic checks used by CI:
+
+```bash
+bash scripts/check.sh
+```
+
+The project currently uses only the Python standard library, so a virtual environment is optional.
+
+## Roadmap
+
+See [ROADMAP.md](ROADMAP.md) for planned work. Contributions are welcome, especially new monitor modules, notification providers, tests, and documentation improvements.
 
 ## Safety
 

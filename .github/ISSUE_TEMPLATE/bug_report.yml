@@ -1,0 +1,50 @@
+name: Bug report
+description: Report a monitor, notification, or deployment problem.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for reporting a problem. Please do not paste secrets, cookies, or private tokens.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What went wrong?
+    validations:
+      required: true
+  - type: dropdown
+    id: monitor
+    attributes:
+      label: Area
+      options:
+        - Twitter/X monitor
+        - Damai monitor
+        - Notification provider
+        - Docker deployment
+        - Cron deployment
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include commands and sanitized logs if possible.
+      render: shell
+    validations:
+      required: false
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: false
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python version, deployment method, and relevant config names without secret values.
+    validations:
+      required: false

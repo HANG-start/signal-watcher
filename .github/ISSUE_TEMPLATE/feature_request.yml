@@ -1,0 +1,26 @@
+name: Feature request
+description: Suggest a monitor, notification provider, or workflow improvement.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What user problem would this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: What should Signal Watcher do?
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints
+      description: APIs, rate limits, login requirements, or safety concerns.
+    validations:
+      required: false
