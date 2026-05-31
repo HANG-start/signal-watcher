@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  signal-watcher:
+    build: .
+    container_name: signal-watcher
+    restart: always
+    env_file:
+      - .env
